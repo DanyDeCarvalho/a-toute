@@ -1,3 +1,23 @@
+Une fois le git clone fait.
+
+Lancer le terminal de vscode a la racine du projet :
+  - faire une npm i si ça ne marche pas faire un npm i -force
+  - Ensuite lancer le projet avec un npm run dev
+
+On utilise tailwind : 
+
+Exemple pour faire une div rouge avec le un titre en grand et gras : 
+return (
+  <div className="w-screen h-screen bg-red-500">
+      <p className="text-2xl font-bold"> Hello ! </p>
+  </div>
+);
+
+On peut retrouver toute les classes de tailwind ici : https://tailwindcss.com/docs/installation
+
+On utilise une librairie de composants du shadcn la documentation est explicite : https://ui.shadcn.com/docs/components/accordion
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
