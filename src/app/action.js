@@ -9,11 +9,19 @@ export async function sendEmail({ email, subject, telephone, raisonSocial, preno
     raisonSocial == undefined ? raisonSocial = '' : raisonSocial;
     prenom == undefined ? prenom = '' : prenom;
     nom == undefined ? nom = '' : nom;
+    const htmlContent = `
+      <p><strong>Raison Sociale:</strong> ${raisonSocial}</p>
+      <p><strong>Prénom:</strong> ${prenom}</p>
+      <p><strong>Nom:</strong> ${nom}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Téléphone:</strong> ${telephone}</p>
+      <p><strong>Demande:</strong> ${subject}</p>
+    `;
     await sendgrid.send({
       to : 'testmailbox780@gmail.com',
       from: 'dany-de-carvalho@outlook.fr', // l'adresse d'envoi validée dans SendGrid
       subject : 'Nouveau message de contact',
-      text: raisonSocial + ' ' + prenom + ' '+ nom + ' ' + email + ' ' + telephone + ' ' + subject,
+      html: htmlContent,
     });
     return { success: true, message: 'Email envoyé avec succès !' };
   } catch (error) {
