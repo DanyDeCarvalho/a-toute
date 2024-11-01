@@ -18,6 +18,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Tiptap from "@/components/Tiptap/Tiptap";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Entrez une adresse mail 📧" }),
@@ -155,7 +156,7 @@ export default function ContactB2CForm() {
                     <FormLabel>Demande</FormLabel>
                   </div>
                   <FormControl>
-                    <Input placeholder="Demande" type="text" {...field} />
+                    <Tiptap placeholder="Demande" type="text" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
