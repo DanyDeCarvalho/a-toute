@@ -24,6 +24,7 @@ export async function sendEmail({
     raisonSocial == undefined ? (raisonSocial = "") : raisonSocial;
     prenom == undefined ? (prenom = "") : prenom;
     nom == undefined ? (nom = "") : nom;
+
     const htmlContent = `
       <p><strong>Raison Sociale:</strong> ${raisonSocial}</p>
       <p><strong>Prénom:</strong> ${prenom}</p>
@@ -36,6 +37,7 @@ export async function sendEmail({
       to: "testmailbox780@gmail.com",
       from: "dany-de-carvalho@outlook.fr", // l'adresse d'envoi validée dans SendGrid
       subject: "Nouveau message de contact",
+
       html: htmlContent,
     });
     return { success: true, message: "Email envoyé avec succès !" };
