@@ -19,14 +19,15 @@ import "react-toastify/dist/ReactToastify.css";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Tiptap from "@/components/Tiptap/Tiptap";
-
+import { motion } from "framer-motion";
+import ButtonSubmitForm from "./ButtonSubmitForm";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Entrez une adresse mail 📧" }),
   telephone: z
     .string({ message: "Renseignez un numero pour pouvoir vous joindre ☎️" })
-    .min(10)
-    .max(10),
+    .min(10, { message: "Numéro de téléphone trop court" })
+    .max(10, { message: "Numéro de téléphone trop long" }),
   demande: z
     .string({
       message:
@@ -35,14 +36,16 @@ const formSchema = z.object({
     .min(10, { message: "Demande trop courte ! Soyez plus explicite 😊" }),
   raisonSocial: z
     .string({ message: "Quel est le nom de votre entreprise ? 🏢" })
-    .min(3),
+    .min(2, { message: "Quel est le nom de votre entreprise ? 🏢" }),
 });
 
 export default function ContactB2BForm() {
   const [responseMessage, setResponseMessage] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onSubmit = async (values) => {
-    console.log(values.email);
+    setIsSubmitting(true);
     const result = await sendEmail({
       email: values.email,
       subject: values.demande,
@@ -77,7 +80,7 @@ export default function ContactB2BForm() {
     <div className="flex items-center justify-center w-full h-full ">
       <Form {...form}>
         <form
-          className="w-4/12 flex flex-col gap-6"
+          className="w-10/12 md:w-full flex flex-col gap-6"
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <div>
@@ -97,8 +100,8 @@ export default function ContactB2BForm() {
               )}
             />
           </div>
-          <div className="flex gap-6 w-full">
-            <div className="w-1/2">
+          <div className="flex flex-col md:flex-row gap-6 w-full">
+            <div className="md:w-1/2">
               <FormField
                 control={form.control}
                 name="email"
@@ -115,7 +118,7 @@ export default function ContactB2BForm() {
                 )}
               />
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <FormField
                 control={form.control}
                 name="telephone"
@@ -137,8 +140,9 @@ export default function ContactB2BForm() {
               />
             </div>
           </div>
-          <div>
+          <div className="w-full">
             <FormField
+              className="w-full"
               control={form.control}
               name="demande"
               render={({ field }) => (
@@ -155,10 +159,11 @@ export default function ContactB2BForm() {
             />
           </div>
 
-          <Button type="submit">
-            <SendIcon className="mr-2 h-4 w-4" />
-            Envoyer
-          </Button>
+          <ButtonSubmitForm
+            isSubmitting={isSubmitting}
+            setIsSubmitted={setIsSubmitted}
+            isSubmitted={isSubmitted}
+          />
         </form>
       </Form>
       <ToastContainer

@@ -34,7 +34,10 @@ export default function Toolbar({ editor }) {
 
   return (
     <div className="flex w-full flex-wrap items-start justify-between rounded-tl-md rounded-tr-md border">
-      <ToggleGroup type="multiple" className="p-0.5">
+      <ToggleGroup
+        className="flex w-full flex-wrap items-start justify-between rounded-tl-md rounded-tr-md border"
+        type="multiple"
+      >
         <ToggleGroupItem
           onClick={(e) => {
             e.preventDefault();
