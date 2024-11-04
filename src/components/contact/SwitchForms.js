@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ContactB2BForm from "./forms/ContactB2BForm";
 import { Label } from "../ui/label";
 import { Switch } from "../ui/switch";
@@ -18,7 +19,29 @@ export default function SwitchForms() {
           <Switch onCheckedChange={() => setIsB2B(!isB2B)} id="airplane-mode" />
           <Label className="uppercase font-bold">Particulier</Label>
         </div>
-        {isB2B ? <ContactB2BForm /> : <ContactB2CForm />}
+        <AnimatePresence mode="wait">
+          {isB2B ? (
+            <motion.div
+              key="b2b"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ContactB2BForm />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="b2c"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ContactB2CForm />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
