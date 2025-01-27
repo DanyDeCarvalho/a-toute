@@ -17,7 +17,7 @@ export default async function FaqPage() {
       </p>
 
       <ImageSection
-        imageSrc="/atotue2.PNG?height=300&width=500"
+        imageSrc="/atotue2.PNG?height=300&amp;width=500"
         imageAlt="Support client"
         title="Notre engagement envers vous"
         description="Chez A toute, nous nous engageons à fournir un service client exceptionnel. Notre équipe est disponible 24/7 pour répondre à vos questions et résoudre vos problèmes."
@@ -31,19 +31,19 @@ export default async function FaqPage() {
       </div>
 
       <ImageSection
-        imageSrc="/atoute.PNG?height=300&width=500"
+        imageSrc="/atoute.PNG?height=300&amp;width=500"
         imageAlt="Processus de remboursement"
         title="Notre politique de remboursement"
-        description="Nous croyons en la qualité de nos produits et services. C'est pourquoi nous offrons une garantie de remboursement de 30 jours. Votre satisfaction est notre priorité."
+        description="Nous croyons en la qualité de nos produits et services. C&apos;est pourquoi nous offrons une garantie de remboursement de 30 jours. Votre satisfaction est notre priorité."
         isReversed={true}
       />
 
       <div className="text-center mt-12">
         <h2 className="text-2xl font-semibold mb-4">
-          Vous n'avez pas trouvé votre réponse ?
+          Vous n&apos;avez pas trouvé votre réponse ?
         </h2>
         <p className="text-lg mb-6">
-          Notre équipe de support est là pour vous aider. N'hésitez pas à nous
+          Notre équipe de support est là pour vous aider. N&apos;hésitez pas à nous
           contacter pour toute question supplémentaire.
         </p>
         <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">

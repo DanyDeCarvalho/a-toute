@@ -13,9 +13,9 @@ export default function QuestionsAsked() {
       <AccordionItem value="item-1">
         <AccordionTrigger>Comment puis-je créer un compte ?</AccordionTrigger>
         <AccordionContent>
-          Pour créer un compte, cliquez sur le bouton "S'inscrire" en haut à
-          droite de la page d'accueil. Remplissez ensuite le formulaire avec vos
-          informations personnelles et suivez les instructions à l'écran.
+          Pour créer un compte, cliquez sur le bouton &quot;S&apos;inscrire&quot; en haut à
+          droite de la page d&apos;accueil. Remplissez ensuite le formulaire avec vos
+          informations personnelles et suivez les instructions à l&apos;écran.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
@@ -32,7 +32,7 @@ export default function QuestionsAsked() {
           Comment puis-je réinitialiser mon mot de passe ?
         </AccordionTrigger>
         <AccordionContent>
-          Sur la page de connexion, cliquez sur "Mot de passe oublié ?". Entrez
+          Sur la page de connexion, cliquez sur &quot;Mot de passe oublié ?&quot;. Entrez
           votre adresse e-mail et nous vous enverrons un lien pour réinitialiser
           votre mot de passe.
         </AccordionContent>
@@ -51,7 +51,7 @@ export default function QuestionsAsked() {
         </AccordionTrigger>
         <AccordionContent>
           Nous offrons un remboursement complet dans les 30 jours suivant
-          l'achat si vous n'êtes pas satisfait de nos services. Contactez notre
+          l&apos;achat si vous n&apos;etes pas satisfait de nos services. Contactez notre
           support client pour initier le processus de remboursement.
         </AccordionContent>
       </AccordionItem>
