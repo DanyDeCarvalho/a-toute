@@ -51,5 +51,6 @@ export default async function FaqPage() {
         </button>
       </div>
     </div>
+
   );
 }
