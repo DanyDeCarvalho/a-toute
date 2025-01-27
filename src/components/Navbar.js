@@ -1,6 +1,6 @@
 "use client"; // Pour Next.js côté client
+import { UserIcon } from "lucide-react";
 import { useState } from "react";
-import { UserIcon } from '@heroicons/react/24/solid'; // Importation de l'icône
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
